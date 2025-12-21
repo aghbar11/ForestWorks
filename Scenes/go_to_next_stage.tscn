@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgqtlv8p0mers"]
+
+[ext_resource type="Texture2D" uid="uid://5sf13cq0l5cy" path="res://Assests/li3bat survival rami's survival omar's planning op op fr fr/inventory-slot.png" id="1_486e2"]
+
+[node name="go_to_next_stage" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.0
+offset_right = 96.0
+offset_bottom = 140.0
+grow_horizontal = 2
+texture = ExtResource("1_486e2")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 175.0
+offset_bottom = 128.0
+text = "You can pass through this entrance to the Dungeon"

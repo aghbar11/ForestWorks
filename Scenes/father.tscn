@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://dibq1l1bjy5sq"]
+
+[ext_resource type="Texture2D" uid="uid://g1ovdaefk1fh" path="res://Assests/Townfolk-Old-M-001-removebg-preview.png" id="1_ei72b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moxho"]
+atlas = ExtResource("1_ei72b")
+region = Rect2(0, 64, 25, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gm3y"]
+atlas = ExtResource("1_ei72b")
+region = Rect2(0, 32, 25, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ic0wo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moxho")
+}],
+"loop": true,
+"name": &"front_view",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gm3y")
+}],
+"loop": true,
+"name": &"rigth_view",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0as5e"]
+radius = 10.0722
+
+[node name="father" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.9375, -5.25)
+scale = Vector2(1.845, 1.64063)
+sprite_frames = SubResource("SpriteFrames_ic0wo")
+animation = &"front_view"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+scale = Vector2(1, 0.830737)
+shape = SubResource("CircleShape2D_0as5e")

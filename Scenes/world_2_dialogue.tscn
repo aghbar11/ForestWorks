@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bwpuetkxf0r"]
+
+[ext_resource type="Script" uid="uid://rd33ctuxuq6k" path="res://Scripts/final_scene_dialogue.gd" id="1_8apdp"]
+[ext_resource type="Texture2D" uid="uid://5sf13cq0l5cy" path="res://Assests/li3bat survival rami's survival omar's planning op op fr fr/inventory-slot.png" id="2_jqpr7"]
+
+[node name="world_2_dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = -587.0
+offset_bottom = -503.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8apdp")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 25.0
+offset_right = 689.0
+offset_bottom = 147.0
+texture = ExtResource("2_jqpr7")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+modulate = Color(0.0562916, 0.0562916, 0.0562916, 1)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 81.0
+offset_bottom = 105.0
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 76.0
+offset_right = 625.0
+offset_bottom = 111.0

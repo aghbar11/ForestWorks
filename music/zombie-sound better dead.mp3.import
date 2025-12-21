@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dr12e25ihr7mc"
+path="res://.godot/imported/zombie-sound better dead.mp3-bbe515225505739ad65c168bbab78427.mp3str"
+
+[deps]
+
+source_file="res://music/zombie-sound better dead.mp3"
+dest_files=["res://.godot/imported/zombie-sound better dead.mp3-bbe515225505739ad65c168bbab78427.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

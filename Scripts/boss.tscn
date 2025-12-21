@@ -1,0 +1,124 @@
+[gd_scene load_steps=19 format=3 uid="uid://cbh26rv020vye"]
+
+[ext_resource type="Script" uid="uid://cbxbaa0cdvk86" path="res://Scripts/boss.gd" id="1_y84s7"]
+[ext_resource type="Texture2D" uid="uid://g1ovdaefk1fh" path="res://Assests/Townfolk-Old-M-001-removebg-preview.png" id="2_52hyy"]
+[ext_resource type="Texture2D" uid="uid://iyj4de16ib34" path="res://Assests/old NPC hit.png" id="3_52hyy"]
+[ext_resource type="Texture2D" uid="uid://dcy3ct8jddgaf" path="res://Assests/Dungeon Assests/DestroySmoke.png" id="4_pyu10"]
+[ext_resource type="AudioStream" uid="uid://bw1p3txmngs28" path="res://music/slap-hurt-pain-sound-effect-262618.mp3" id="5_osjch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyu10"]
+atlas = ExtResource("2_52hyy")
+region = Rect2(0, 66, 25, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osjch"]
+atlas = ExtResource("2_52hyy")
+region = Rect2(25, 66, 25, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wydh3"]
+atlas = ExtResource("2_52hyy")
+region = Rect2(50, 66, 25, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ba2"]
+atlas = ExtResource("3_52hyy")
+region = Rect2(24, 66, 24, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0d2g"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovqyo"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lo2s"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2cm"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv2fe"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2dy4"]
+atlas = ExtResource("4_pyu10")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7ba2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyu10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osjch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wydh3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ba2")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0d2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovqyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lo2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv2fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2dy4")
+}],
+"loop": true,
+"name": &"vanish",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0d2g"]
+radius = 20.025
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ovqyo"]
+radius = 32.0624
+
+[node name="boss" type="CharacterBody2D"]
+script = ExtResource("1_y84s7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(21, 18)
+scale = Vector2(2.66, 2.19697)
+sprite_frames = SubResource("SpriteFrames_i7ba2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 21)
+shape = SubResource("CircleShape2D_f0d2g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 21)
+shape = SubResource("CircleShape2D_ovqyo")
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_osjch")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

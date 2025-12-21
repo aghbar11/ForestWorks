@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mqntsyqycd8v"
+path="res://.godot/imported/zombie-sound dead.mp3-00a45c3ddcc2a1fbdc3e44c26c3068fe.mp3str"
+
+[deps]
+
+source_file="res://music/zombie-sound dead.mp3"
+dest_files=["res://.godot/imported/zombie-sound dead.mp3-00a45c3ddcc2a1fbdc3e44c26c3068fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

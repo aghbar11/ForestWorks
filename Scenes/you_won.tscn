@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmligq6t4g22s"]
+
+[ext_resource type="Script" uid="uid://d4ggjrdimahdv" path="res://Scripts/you_won.gd" id="1_mbqwl"]
+[ext_resource type="Texture2D" uid="uid://cbfb0r5dwkofx" path="res://Assests/istockphoto-1446199740-612x612.jpg" id="1_vac7v"]
+[ext_resource type="AudioStream" uid="uid://cj8cxmqaj5pjq" path="res://music/orchestral-win-331233.mp3" id="3_mbqwl"]
+
+[sub_resource type="FontVariation" id="FontVariation_b53s0"]
+variation_transform = Transform2D(1.145, 0, 0.195, 1.12, 0, 0)
+
+[node name="you_won" type="Node2D"]
+script = ExtResource("1_mbqwl")
+
+[node name="Istockphoto-1446199740-612x612" type="Sprite2D" parent="."]
+position = Vector2(216, 191)
+scale = Vector2(1.39869, 1.16176)
+texture = ExtResource("1_vac7v")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 111.0
+offset_top = 159.0
+offset_right = 310.0
+offset_bottom = 282.0
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = SubResource("FontVariation_b53s0")
+theme_override_font_sizes/bold_italics_font_size = 8
+theme_override_font_sizes/normal_font_size = 40
+text = "You Won"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(219, 189)
+zoom = Vector2(1.345, 1.345)
+
+[node name="you_won_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mbqwl")

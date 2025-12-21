@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5tfdhpa5oft7"]
+
+[ext_resource type="Script" uid="uid://b02mkngca6pwp" path="res://Scripts/button_sequence.gd" id="1_abm28"]
+[ext_resource type="PackedScene" uid="uid://c4nobg04t4pju" path="res://Scenes/ground_button.tscn" id="2_fudsq"]
+
+[node name="button_sequence" type="Node2D"]
+script = ExtResource("1_abm28")
+
+[node name="ground_button" parent="." instance=ExtResource("2_fudsq")]
+modulate = Color(0, 0.749434, 0, 1)
+position = Vector2(128, -112)
+
+[node name="ground_button2" parent="." instance=ExtResource("2_fudsq")]
+modulate = Color(1, 0.174173, 0.127215, 1)
+position = Vector2(174, -112)
+
+[node name="ground_button3" parent="." instance=ExtResource("2_fudsq")]
+modulate = Color(0.398642, 0.587427, 1, 1)
+position = Vector2(221, -113)
+
+[node name="ground_button4" parent="." instance=ExtResource("2_fudsq")]
+modulate = Color(0.947918, 0.947918, 1.54018e-06, 1)
+position = Vector2(267, -113)

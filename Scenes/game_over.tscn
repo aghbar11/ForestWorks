@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj3n1nk5ga2uv"]
+
+[ext_resource type="Script" uid="uid://bsf6xp06jejy" path="res://Scripts/game_over.gd" id="1_8fo1c"]
+[ext_resource type="Texture2D" uid="uid://ceg2bcs7haxxr" path="res://Assests/pexels-nejc-kosir-108379-338936.jpg" id="1_ojehl"]
+[ext_resource type="AudioStream" uid="uid://b8rnqm368em3" path="res://music/game-over-39-199830.mp3" id="3_ek8ke"]
+
+[node name="game_over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8fo1c")
+
+[node name="Pexels-nejc-kosir-108379-338936" type="Sprite2D" parent="."]
+position = Vector2(587, 324)
+scale = Vector2(0.222942, 0.209318)
+texture = ExtResource("1_ojehl")
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 171.0
+offset_right = 767.0
+offset_bottom = 259.0
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -4.0
+offset_right = 105.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+
+[node name="You_died" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -381.0
+offset_right = 87.0
+offset_bottom = -298.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 22
+text = "You died"
+
+[node name="game_over_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ek8ke")
+volume_db = 10.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

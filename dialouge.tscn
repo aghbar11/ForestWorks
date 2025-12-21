@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1n5y7jyo8kox"]
+
+[ext_resource type="Texture2D" uid="uid://dvjmdypgoe04v" path="res://Assests/li3bat survival rami's survival omar's planning op op fr fr/inventory-background.png" id="1_31vge"]
+[ext_resource type="Script" uid="uid://biuwe8607bkxe" path="res://Scripts/dialouge_grandpa.gd" id="1_avunv"]
+
+[node name="Dialouge" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -67.0
+offset_top = -41.0
+offset_right = -27.0
+offset_bottom = -1.0
+script = ExtResource("1_avunv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -80.0
+offset_right = 175.0
+offset_bottom = 2.0
+texture = ExtResource("1_31vge")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 150.0
+offset_bottom = 37.0
+scale = Vector2(0.6, 0.6)
+text = "Grandfather:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 15.0
+offset_right = 283.0
+offset_bottom = 108.0
+scale = Vector2(0.7, 0.7)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://lwbs2aeopaoq"]
+
+[ext_resource type="Texture2D" uid="uid://bslfsfdgsb52i" path="res://Assests/Tiled_files/exterior_mushroom.png" id="1_mbn0g"]
+[ext_resource type="Script" uid="uid://cmw3187hmpw1y" path="res://Scripts/healing_mushroom.gd" id="2_clldi"]
+[ext_resource type="AudioStream" uid="uid://c2owe6e187lw7" path="res://music/eat-323883.mp3" id="3_jstui"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_clldi"]
+radius = 25.0799
+
+[node name="healing_mushroom" type="Sprite2D"]
+texture = ExtResource("1_mbn0g")
+script = ExtResource("2_clldi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_clldi")
+
+[node name="healing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_jstui")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

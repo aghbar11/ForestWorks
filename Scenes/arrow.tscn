@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1svdq6c8d15q"]
+
+[ext_resource type="Script" uid="uid://bjyyraya50auo" path="res://Scripts/arrow.gd" id="1_2ndhl"]
+[ext_resource type="Texture2D" uid="uid://8wj3uq22x0jo" path="res://Assests/li3bat survival rami's survival omar's planning op op fr fr/stick-icon.png" id="2_h5x2m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6a6ax"]
+radius = 5.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h5x2m"]
+radius = 4.0
+height = 12.0
+
+[node name="Arrow" type="Area2D"]
+script = ExtResource("1_2ndhl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(0.57, 0, 0, 1)
+position = Vector2(1, 1)
+rotation = 1.5708
+texture = ExtResource("2_h5x2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6a6ax")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-4.17233e-07, 0)
+scale = Vector2(0.2, 0.5)
+
+[node name="arrowArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arrowArea"]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h5x2m")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
