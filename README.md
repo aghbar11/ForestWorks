@@ -4,6 +4,15 @@ A short pixel-art adventure made with Godot. Your grandfather sends you into the
 
 **Play it in your browser on itch.io:** https://amoor11.itch.io/dungeonsandforests
 
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Grandfather's house, where the quest starts](screenshots/home.png) | ![The forest path with zombies, coins and mushrooms](screenshots/forest.png) |
+| Grandfather's house | The forest |
+| ![A dungeon room with a colored button puzzle](screenshots/dungeon.png) | ![The final boss fight in the dungeon](screenshots/boss.png) |
+| Dungeon puzzle room | The final boss |
+
 ## Controls
 
 | Key | Action |
@@ -36,6 +45,7 @@ git config --global core.longpaths true
 - `Dialogue/` – dialogue lines as JSON
 - `Assests/` – sprites, tilesets and Tiled maps
 - `music/` – music and sound effects
+- `screenshots/` – images used in this README (ignored by Godot)
 
 ## Credits
 
